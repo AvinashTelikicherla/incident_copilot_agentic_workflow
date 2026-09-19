@@ -1,0 +1,234 @@
+{
+  "deterministic_first": {
+    "summary": {
+      "diagnosis_accuracy": 1.0,
+      "context_selection_rate": 1.0,
+      "action_safety_rate": 1.0,
+      "servicenow_success_rate": 1.0,
+      "avg_latency_ms": 1.8
+    },
+    "cases": [
+      {
+        "scenario": "db_timeout",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 3.2,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "memory_leak",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.8,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "payment_outage",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.9,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "cache_stampede",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "jwt_rotation",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.7,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "latency_ambiguous",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "db_timeout",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.8,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "payment_outage",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "cache_stampede",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "deterministic"
+      },
+      {
+        "scenario": "latency_ambiguous",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "llm"
+      }
+    ]
+  },
+  "llm_first": {
+    "summary": {
+      "diagnosis_accuracy": 0.9,
+      "context_selection_rate": 1.0,
+      "action_safety_rate": 1.0,
+      "servicenow_success_rate": 1.0,
+      "avg_latency_ms": 1.7
+    },
+    "cases": [
+      {
+        "scenario": "db_timeout",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.7,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "memory_leak",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.5,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "payment_outage",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.9,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "cache_stampede",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.7,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "jwt_rotation",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "latency_ambiguous",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "db_timeout",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.6,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "payment_outage",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.5,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "cache_stampede",
+        "status": "fail",
+        "diagnosis_pass": false,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 2.0,
+        "servicenow_created": true,
+        "method": "llm"
+      },
+      {
+        "scenario": "latency_ambiguous",
+        "status": "pass",
+        "diagnosis_pass": true,
+        "context_pass": true,
+        "action_pass": true,
+        "latency_ms": 1.7,
+        "servicenow_created": true,
+        "method": "llm"
+      }
+    ]
+  },
+  "failure_analysis": [
+    "Offline LLM mode is intentionally a repeatable test double, not a model-quality benchmark.",
+    "A real evaluation should repeat the 10 cases across model/prompt versions and include token/cost tracking.",
+    "Tool failures should route to retry/clarification rather than fabricated evidence."
+  ],
+  "required_examples": {
+    "clarification": "Both log and metric branches unavailable should route to clarification.",
+    "deterministic_rule": "checkout-api DB_TIMEOUT plus pool-waiting signal should be classified before LLM reasoning.",
+    "tool_failure": "A retryable ServiceNow timeout should be logged as an action failure and never be replaced with a hallucinated success."
+  }
+}
