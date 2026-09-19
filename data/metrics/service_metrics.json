@@ -1,0 +1,19 @@
+{
+  "checkout-api": {
+    "db_timeout_spike": {"error_rate_pct":34.0,"p50_latency_ms":420,"p95_latency_ms":4200,"p99_latency_ms":6100,"cpu_utilization_pct":72,"memory_utilization_pct":68,"requests_per_second":820,"dependency_health":{"postgres":"DEGRADED","redis":"HEALTHY"},"recent_deployments":[{"version":"v2.3.1","minutes_ago":5}],"db_connection_pool_waiting":18,"db_pool_size":20},
+    "memory_leak": {"error_rate_pct":8.0,"p50_latency_ms":500,"p95_latency_ms":1600,"p99_latency_ms":2400,"cpu_utilization_pct":70,"memory_utilization_pct":91,"requests_per_second":430,"dependency_health":{"postgres":"HEALTHY","redis":"HEALTHY"},"recent_deployments":[],"pod_restart_count":4}
+  },
+  "payment-service": {
+    "third_party_timeout": {"error_rate_pct":62.0,"p50_latency_ms":4200,"p95_latency_ms":44000,"p99_latency_ms":45000,"cpu_utilization_pct":44,"memory_utilization_pct":51,"requests_per_second":210,"dependency_health":{"stripe-api":"DOWN","postgres":"HEALTHY"},"recent_deployments":[]}
+  },
+  "inventory-service": {
+    "cache_miss_storm": {"error_rate_pct":18.0,"p50_latency_ms":900,"p95_latency_ms":5100,"p99_latency_ms":8200,"cpu_utilization_pct":81,"memory_utilization_pct":74,"requests_per_second":600,"dependency_health":{"redis":"DEGRADED","postgres":"DEGRADED"},"recent_deployments":[] ,"cache_hit_rate_pct":2}
+  },
+  "auth-service": {
+    "jwt_key_rotation": {"error_rate_pct":49.0,"p50_latency_ms":120,"p95_latency_ms":320,"p99_latency_ms":700,"cpu_utilization_pct":38,"memory_utilization_pct":44,"requests_per_second":900,"dependency_health":{"jwks":"HEALTHY","postgres":"HEALTHY"},"recent_deployments":[],"key_rotation_age_minutes":12}
+  },
+  "api-gateway": {
+    "high_latency_mixed": {"error_rate_pct":2.1,"p50_latency_ms":600,"p95_latency_ms":3100,"p99_latency_ms":5200,"cpu_utilization_pct":93,"memory_utilization_pct":62,"requests_per_second":1500,"dependency_health":{"checkout-api":"HEALTHY","payment-service":"HEALTHY"},"recent_deployments":[],"cpu_throttling_pct":18},
+    "upstream_degraded": {"error_rate_pct":9.0,"p50_latency_ms":900,"p95_latency_ms":3500,"p99_latency_ms":6000,"cpu_utilization_pct":67,"memory_utilization_pct":60,"requests_per_second":1300,"dependency_health":{"checkout-api":"DEGRADED","payment-service":"HEALTHY"},"recent_deployments":[]}
+  }
+}

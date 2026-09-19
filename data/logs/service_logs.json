@@ -1,0 +1,47 @@
+{
+  "checkout-api": {
+    "db_timeout_spike": [
+      {"timestamp":"2026-09-19T16:00:01Z","level":"ERROR","request_id":"req-1001","message":"DB_TIMEOUT waiting for connection pool","pod":"checkout-7d9f","trace_id":"tr-001"},
+      {"timestamp":"2026-09-19T16:00:02Z","level":"ERROR","request_id":"req-1002","message":"DB_TIMEOUT waiting for connection pool","pod":"checkout-7d9f","trace_id":"tr-002"},
+      {"timestamp":"2026-09-19T16:00:04Z","level":"ERROR","request_id":"req-1003","message":"DB_TIMEOUT waiting for connection pool","pod":"checkout-8ac2","trace_id":"tr-003"},
+      {"timestamp":"2026-09-19T16:00:06Z","level":"WARN","request_id":"req-1004","message":"connection pool exhausted","pod":"checkout-8ac2","trace_id":"tr-004"}
+    ],
+    "memory_leak": [
+      {"timestamp":"2026-09-19T16:01:01Z","level":"ERROR","request_id":"req-1101","message":"OOMKilled container checkout-api","pod":"checkout-1a2b","trace_id":"tr-011"},
+      {"timestamp":"2026-09-19T16:01:05Z","level":"ERROR","request_id":"req-1102","message":"java.lang.OutOfMemoryError: heap space","pod":"checkout-1a2b","trace_id":"tr-012"},
+      {"timestamp":"2026-09-19T16:01:09Z","level":"ERROR","request_id":"req-1103","message":"OOMKilled container checkout-api","pod":"checkout-3c4d","trace_id":"tr-013"}
+    ]
+  },
+  "payment-service": {
+    "third_party_timeout": [
+      {"timestamp":"2026-09-19T16:02:01Z","level":"ERROR","request_id":"req-2001","message":"UPSTREAM_TIMEOUT calling Stripe API","pod":"payment-22aa","trace_id":"tr-021"},
+      {"timestamp":"2026-09-19T16:02:03Z","level":"ERROR","request_id":"req-2002","message":"circuit breaker OPEN for Stripe","pod":"payment-22aa","trace_id":"tr-022"},
+      {"timestamp":"2026-09-19T16:02:05Z","level":"ERROR","request_id":"req-2003","message":"UPSTREAM_TIMEOUT calling Stripe API","pod":"payment-33bb","trace_id":"tr-023"}
+    ]
+  },
+  "inventory-service": {
+    "cache_miss_storm": [
+      {"timestamp":"2026-09-19T16:03:01Z","level":"WARN","request_id":"req-3001","message":"cache MISS rate above threshold","pod":"inventory-12aa","trace_id":"tr-031"},
+      {"timestamp":"2026-09-19T16:03:03Z","level":"ERROR","request_id":"req-3002","message":"cache MISS caused DB query surge","pod":"inventory-12aa","trace_id":"tr-032"},
+      {"timestamp":"2026-09-19T16:03:05Z","level":"ERROR","request_id":"req-3003","message":"bulk invalidation completed for inventory keys","pod":"inventory-13bb","trace_id":"tr-033"}
+    ]
+  },
+  "auth-service": {
+    "jwt_key_rotation": [
+      {"timestamp":"2026-09-19T16:04:01Z","level":"ERROR","request_id":"req-4001","message":"JWT validation failed: signature verification failed","pod":"auth-91aa","trace_id":"tr-041"},
+      {"timestamp":"2026-09-19T16:04:02Z","level":"ERROR","request_id":"req-4002","message":"JWT validation failed: signature verification failed","pod":"auth-91aa","trace_id":"tr-042"},
+      {"timestamp":"2026-09-19T16:04:03Z","level":"ERROR","request_id":"req-4003","message":"401 unauthorized after key rotation","pod":"auth-92bb","trace_id":"tr-043"}
+    ]
+  },
+  "api-gateway": {
+    "high_latency_mixed": [
+      {"timestamp":"2026-09-19T16:05:01Z","level":"WARN","request_id":"req-5001","message":"gateway request latency above p95 threshold","pod":"gateway-01aa","trace_id":"tr-051"},
+      {"timestamp":"2026-09-19T16:05:03Z","level":"WARN","request_id":"req-5002","message":"CPU throttling detected","pod":"gateway-01aa","trace_id":"tr-052"},
+      {"timestamp":"2026-09-19T16:05:04Z","level":"INFO","request_id":"req-5003","message":"no recent deployment detected","pod":"gateway-02bb","trace_id":"tr-053"}
+    ],
+    "upstream_degraded": [
+      {"timestamp":"2026-09-19T16:06:01Z","level":"WARN","request_id":"req-5101","message":"upstream latency elevated","pod":"gateway-03aa","trace_id":"tr-061"},
+      {"timestamp":"2026-09-19T16:06:02Z","level":"ERROR","request_id":"req-5102","message":"upstream degradation detected","pod":"gateway-03aa","trace_id":"tr-062"}
+    ]
+  }
+}
